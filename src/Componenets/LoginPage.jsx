@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function LoginPage({
   showPopup,
@@ -44,23 +44,20 @@ function LoginPage({
             onChange={handleChange}
           />
         </FormField>
-        <Button type="submit">Login</Button>
-        <Link to="CreatePage.jsx">
-          <Button type="submit">SignUp</Button>
-        </Link>
+        <LoginBtn type="submit">Login</LoginBtn>
       </Form>
       {showPopup && (
         <Popup>
           <h1>OOPS!</h1>
           <p>Please Fill in All Requirement</p>
-          <Button onClick={closePopup}>close</Button>
+          <LoginBtn onClick={closePopup}>close</LoginBtn>
         </Popup>
       )}
       {showCongratulations && (
         <CongratulationsPopup>
           <h1>Congratulations!</h1>
           <p>Your Detail is Correct</p>
-          <Button onClick={closePopup}>close</Button>
+          <LoginBtn onClick={closePopup}>close</LoginBtn>
         </CongratulationsPopup>
       )}
     </div>
@@ -107,20 +104,23 @@ const FormField = styled.div`
     font-family: "Fira Sans", sans-serif;
   }
 `;
-const Button = styled.button`
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: black;
+const LoginBtn = styled.button`
+  padding: 18px 10px;
+  background-color: gray;
   color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
   cursor: pointer;
-  margin-top: 15px;
-  &:hover {
-    background-color: white;
-    border: 1px solid black;
-    color: black;
-    transition: 0.3s background ease-in;
-  }
+  margin-top: 30px;
+  height: 3vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font: bold;
 `;
 
 const Popup = styled.div`

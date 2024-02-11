@@ -12,7 +12,6 @@ export default function App() {
     phoneNumber: "",
     address: "",
   });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
